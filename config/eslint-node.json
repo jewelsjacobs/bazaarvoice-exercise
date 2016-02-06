@@ -1,0 +1,16 @@
+{
+  "env": {
+    "node": true,
+    "browser": false
+  },
+  "rules": {
+      "strict": [2, "global"],
+      "quotes": [2, "single"],
+      "no-console": false,
+      "key-spacing": [2, {
+        "beforeColon": true,
+        "afterColon": true
+      }],
+      "indent": [2, 2]
+  }
+}
