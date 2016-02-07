@@ -1,40 +1,36 @@
 'use strict';
 
 var express = require('express');
-var random = require('node-random');
 var path = require('path');
-
-var words = require('./words');
-
+var port = process.env.port || 3000;
 var app = express();
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var routes = require('./routes');
 
-app.get('/word', function (req, res) {
-  random.numbers({
-    number : 1,
-    minimum : 0,
-    maximum : words.length - 1
-  }, function (err, num) {
-    if (err) {
-      res.status(500);
-      res.json({ error : err.message });
-      return;
-    }
-
-    res.json({ word : words[num] });
-  });
-});
-
+/**
+ * Config
+ */
+app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(logger('dev'));
 app.use('/static', express.static('.build'));
 
+/**
+ * Api Routes
+ */
+app.use('/word', routes.words);
+
+/**
+ * Static Route
+ */
 app.get('/', function (req, res) {
   res.sendFile(path.resolve(__dirname, '../static/index.html'));
 });
 
-var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('Server listening at http://%s:%s', host, port);
+app.listen(port, '0.0.0.0', function () {
+  console.log('Server listening at http://%s:%s', this.address().address, port);
 });
-
-module.exports = server;

@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * @desc array of words
+ * @const
+ * @type {string[]}
+ */
 module.exports = [
   'abruptly',
   'affix',
