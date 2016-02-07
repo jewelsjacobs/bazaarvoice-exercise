@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>KSS Style Guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/kss.css">
+  
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">KSS Style Guide</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-hangman.html">
+          <span class="kss-nav__ref">1</span
+          ><span class="kss-nav__name">Hangman Styles</span>
+        </a>
+        <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-variables">
+                <span class="kss-nav__ref ">1.1</span
+                ><span class="kss-nav__name">Mixins</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-variables">
+                <span class="kss-nav__ref ">1.1</span
+                ><span class="kss-nav__name">Variables</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-colors">
+                <span class="kss-nav__ref ">1.2</span
+                ><span class="kss-nav__name">Colors</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-fonts">
+                <span class="kss-nav__ref ">1.3</span
+                ><span class="kss-nav__name">Fonts</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-forms">
+                <span class="kss-nav__ref ">1.4</span
+                ><span class="kss-nav__name">Forms</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-forms-buttons">
+                <span class="kss-nav__ref kss-nav__ref-child">1.4.1</span
+                ><span class="kss-nav__name">Buttons</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-forms-text">
+                <span class="kss-nav__ref kss-nav__ref-child">1.4.2</span
+                ><span class="kss-nav__name">Text Input</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-hangman.html#kssref-hangman-layout">
+                <span class="kss-nav__ref ">1.5</span
+                ><span class="kss-nav__name">Grid Layout</span>
+              </a>
+            </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+      <div     id="kssref-hangman" class="kss-section kss-section--depth-1">
+
+    <div class="kss-style">
+      <h1 class="kss-title kss-title--level-1">
+        <a class="kss-title__permalink" href="#kssref-hangman">
+          <span class="kss-title__ref">
+              1
+            <span class="kss-title__permalink-hash">
+                #hangman
+            </span>
+          </span>
+          Hangman Styles
+        </a>
+      </h1>
+
+
+      <div class="kss-description">
+        <p>The source files for these SASS style files can be found in the
+<a href="https://github.com/jewelsjacobs/bazaarvoice-exercise/tree/master/static/styles">demo folder</a> on
+GitHub.</p>
+
+      </div>
+    </div>
+
+
+      </div>
+      <section id="kssref-hangman-variables" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-hangman-variables">
+          <span class="kss-title__ref">
+              1.1
+            <span class="kss-title__permalink-hash">
+                #hangman.variables
+            </span>
+          </span>
+          Mixins
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>SASS mixins used in this hangman exercise.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-hangman-variables" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-hangman-variables">
+          <span class="kss-title__ref">
+              1.1
+            <span class="kss-title__permalink-hash">
+                #hangman.variables
+            </span>
+          </span>
+          Variables
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>SASS variables used in this hangman exercise.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-hangman-colors" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-hangman-colors">
+          <span class="kss-title__ref">
+              1.2
+            <span class="kss-title__permalink-hash">
+                #hangman.colors
+            </span>
+          </span>
+          Colors
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>SASS color helpers.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-hangman-fonts" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-hangman-fonts">
+          <span class="kss-title__ref">
+              1.3
+            <span class="kss-title__permalink-hash">
+                #hangman.fonts
+            </span>
+          </span>
+          Fonts
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>All kinds of cool fonts</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <h1>Header 1</h1>
+<br>
+<h2>Header 2</h2>
+<br>
+<h3>Header 3</h3>
+<br>
+<span class="stencil ">Stencil</span>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1&gt;Header 1&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2&gt;Header 2&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3&gt;Header 3&lt;/h3&gt;
+&lt;br&gt;
+&lt;span class=&quot;stencil &quot;&gt;Stencil&lt;/span&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-hangman-forms" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-hangman-forms">
+          <span class="kss-title__ref">
+              1.4
+            <span class="kss-title__permalink-hash">
+                #hangman.forms
+            </span>
+          </span>
+          Forms
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Below are the form elements used on the site.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-hangman-forms-buttons" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-hangman-forms-buttons">
+          <span class="kss-title__ref">
+              1.4.1
+            <span class="kss-title__permalink-hash">
+                #hangman.forms.buttons
+            </span>
+          </span>
+          Buttons
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>Your standard, everyday buttons.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <button class="purple btn [modifier class]">
+    Purple Button
+</button>
+
+<a class="blue btn [modifier class]" href="#">
+    Blue Button
+</a>
+
+<a class="green btn [modifier class]" href="#">
+    Green Button
+</a>
+
+<input type="submit [modifier class]" class="orange btn">
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          :hover
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Highlight the text box when hovering
+        </div>
+        <div class="kss-modifier__example">
+          <button class="purple btn pseudo-class-hover">
+    Purple Button
+</button>
+
+<a class="blue btn pseudo-class-hover" href="#">
+    Blue Button
+</a>
+
+<a class="green btn pseudo-class-hover" href="#">
+    Green Button
+</a>
+
+<input type="submit pseudo-class-hover" class="orange btn">
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          :focus
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Similar to <code>:hover</code>, however it should demand more attention than when an input is simply hovered.
+        </div>
+        <div class="kss-modifier__example">
+          <button class="purple btn pseudo-class-focus">
+    Purple Button
+</button>
+
+<a class="blue btn pseudo-class-focus" href="#">
+    Blue Button
+</a>
+
+<a class="green btn pseudo-class-focus" href="#">
+    Green Button
+</a>
+
+<input type="submit pseudo-class-focus" class="orange btn">
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          :disabled
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When disabled, the input&#39;s appearance should reflect as such.
+        </div>
+        <div class="kss-modifier__example">
+          <button class="purple btn pseudo-class-disabled">
+    Purple Button
+</button>
+
+<a class="blue btn pseudo-class-disabled" href="#">
+    Blue Button
+</a>
+
+<a class="green btn pseudo-class-disabled" href="#">
+    Green Button
+</a>
+
+<input type="submit pseudo-class-disabled" class="orange btn">
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;purple btn [modifier class]&quot;&gt;
+    Purple Button
+&lt;/button&gt;
+
+&lt;a class=&quot;blue btn [modifier class]&quot; href=&quot;#&quot;&gt;
+    Blue Button
+&lt;/a&gt;
+
+&lt;a class=&quot;green btn [modifier class]&quot; href=&quot;#&quot;&gt;
+    Green Button
+&lt;/a&gt;
+
+&lt;input type=&quot;submit [modifier class]&quot; class=&quot;orange btn&quot;&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-hangman-forms-text" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-hangman-forms-text">
+          <span class="kss-title__ref">
+              1.4.2
+            <span class="kss-title__permalink-hash">
+                #hangman.forms.text
+            </span>
+          </span>
+          Text Input
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>Below are the text-oriented form elements used on the site.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-hangman-forms-text-single-line" class="kss-section kss-section--depth-4">
+
+    <div class="kss-style">
+      <h4 class="kss-title kss-title--level-4">
+        <a class="kss-title__permalink" href="#kssref-hangman-forms-text-single-line">
+          <span class="kss-title__ref">
+              1.4.2.1
+            <span class="kss-title__permalink-hash">
+                #hangman.forms.text.single-line
+            </span>
+          </span>
+          Single-Line Text Boxes
+        </a>
+      </h4>
+
+
+      <div class="kss-description">
+        <p>Your standard, everyday text boxes.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <input type="text" class="[modifier class]" value="Text input"/>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          :hover
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Highlight the text box when hovering
+        </div>
+        <div class="kss-modifier__example">
+          <input type="text" class="pseudo-class-hover" value="Text input"/>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          :focus
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Similar to <code>:hover</code>, however it should demand more attention than when an input is simply hovered.
+        </div>
+        <div class="kss-modifier__example">
+          <input type="text" class="pseudo-class-focus" value="Text input"/>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          :disabled
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When disabled, the input&#39;s appearance should reflect as such.
+        </div>
+        <div class="kss-modifier__example">
+          <input type="text" class="pseudo-class-disabled" value="Text input"/>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type=&quot;text&quot; class=&quot;[modifier class]&quot; value=&quot;Text input&quot;/&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-hangman-forms-text-label-pairs" class="kss-section kss-section--depth-4">
+
+    <div class="kss-style">
+      <h4 class="kss-title kss-title--level-4">
+        <a class="kss-title__permalink" href="#kssref-hangman-forms-text-label-pairs">
+          <span class="kss-title__ref">
+              1.4.2.2
+            <span class="kss-title__permalink-hash">
+                #hangman.forms.text.label-pairs
+            </span>
+          </span>
+          Label/Text box Pairs
+        </a>
+      </h4>
+
+
+      <div class="kss-description">
+        <p>All labelled text boxes should be included in a wrapper <code>&lt;div&gt;</code> element for
+both layout convenience and specific styling.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <div class="mod-input text [modifier class]">
+  <label>Text Label</label>
+  <input type="text" class="" value="Text input"/></div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .disabled
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Use this class when the text input inside is expected to be disabled.
+        </div>
+        <div class="kss-modifier__example">
+          <div class="mod-input text disabled">
+  <label>Text Label</label>
+  <input type="text" class="" value="Text input"/></div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .invalid
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Use this class if the input has failed a validation check.
+        </div>
+        <div class="kss-modifier__example">
+          <div class="mod-input text invalid">
+  <label>Text Label</label>
+  <input type="text" class="" value="Text input"/></div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .valid
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Use this class if the input has passed a validation check (intended for live validation in particular).
+        </div>
+        <div class="kss-modifier__example">
+          <div class="mod-input text valid">
+  <label>Text Label</label>
+  <input type="text" class="" value="Text input"/></div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;mod-input text [modifier class]&quot;&gt;
+  &lt;label&gt;Text Label&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;&quot; value=&quot;Text input&quot;/&gt;&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-hangman-layout" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-hangman-layout">
+          <span class="kss-title__ref">
+              1.5
+            <span class="kss-title__permalink-hash">
+                #hangman.layout
+            </span>
+          </span>
+          Grid Layout
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Simple grid based layout</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <script>
+    var rows = [{
+        row: [
+            {class: "column-3", span: 3},
+            {class: "column-3", span: 3},
+            {class: "column-6", span: 6}
+        ],
+        row: [
+            {class: "column-4", span: 3},
+            {class: "column-3", span: 3},
+            {class: "column-6", span: 6}
+        ],
+        row: [
+            {class: "column-2", span: 2},
+            {class: "column-2", span: 2},
+            {class: "column-1", span: 1},
+            {class: "column-4", span: 4},
+            {class: "column-1", span: 1},
+            {class: "column-1", span: 1},
+            {class: "column-1", span: 1}
+        ],
+        row: [
+            {class: "column-12", span: 12}
+        ]
+    }];
+    var columns = function(row) {
+        var out = '<div class="row">';
+
+        for (var column in row) {
+            out = out + '<div class="' + row[column].class + '"><span>' + + row[column].span + '</span>';
+        }
+        return out + '</div>';
+    };
+
+    Handlebars.registerHelper('div', function(items, options) {
+        var out = '<section class="wrapper">';
+
+        for(var i=0, l=items.length; i<l; i++) {
+            out = out + '<div class="row">' + options.fn(items[i]) + "</div>";
+        }
+
+        return out + '</section>';
+    });
+
+</script>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;script&gt;
+    var rows = [{
+        row: [
+            {class: &quot;column-3&quot;, span: 3},
+            {class: &quot;column-3&quot;, span: 3},
+            {class: &quot;column-6&quot;, span: 6}
+        ],
+        row: [
+            {class: &quot;column-4&quot;, span: 3},
+            {class: &quot;column-3&quot;, span: 3},
+            {class: &quot;column-6&quot;, span: 6}
+        ],
+        row: [
+            {class: &quot;column-2&quot;, span: 2},
+            {class: &quot;column-2&quot;, span: 2},
+            {class: &quot;column-1&quot;, span: 1},
+            {class: &quot;column-4&quot;, span: 4},
+            {class: &quot;column-1&quot;, span: 1},
+            {class: &quot;column-1&quot;, span: 1},
+            {class: &quot;column-1&quot;, span: 1}
+        ],
+        row: [
+            {class: &quot;column-12&quot;, span: 12}
+        ]
+    }];
+    var columns = function(row) {
+        var out = &#x27;&lt;div class=&quot;row&quot;&gt;&#x27;;
+
+        for (var column in row) {
+            out = out + &#x27;&lt;div class=&quot;&#x27; + row[column].class + &#x27;&quot;&gt;&lt;span&gt;&#x27; + + row[column].span + &#x27;&lt;/span&gt;&#x27;;
+        }
+        return out + &#x27;&lt;/div&gt;&#x27;;
+    };
+
+    Handlebars.registerHelper(&#x27;div&#x27;, function(items, options) {
+        var out = &#x27;&lt;section class=&quot;wrapper&quot;&gt;&#x27;;
+
+        for(var i=0, l=items.length; i&lt;l; i++) {
+            out = out + &#x27;&lt;div class=&quot;row&quot;&gt;&#x27; + options.fn(items[i]) + &quot;&lt;/div&gt;&quot;;
+        }
+
+        return out + &#x27;&lt;/section&gt;&#x27;;
+    });
+
+&lt;/script&gt;
+</code></pre>
+      </div>
+
+      </section>
+</article>
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+<script>
+  prettyPrint();
+</script>
+
+
+
+<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
