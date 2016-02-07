@@ -31,4 +31,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.resolve(__dirname, '../static/index.html'));
 });
 
-app.listen(port);
+app.listen(port, function () {
+  console.log('Server listening at port ' + port + ' in ' +  app.get('env') + 'mode');
+});
