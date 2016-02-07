@@ -8,7 +8,7 @@
 
 ### Documentation
 - [CSS Documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/) with [KSS](http://warpspire.com/posts/kss/)
-- [API Documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/jsdoc/apidoc) with [apidocjs](http://apidocjs.com/)
+- [API Documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/apidoc) with [apidocjs](http://apidocjs.com/)
 - [Jsdoc documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/jsdoc) with [jsdoc](http://usejsdoc.org/)
 
 ### Hosted
