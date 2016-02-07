@@ -9,7 +9,7 @@ module.exports = function (config) {
     function preprocessor() {
         var files = {};
         _.each(_.union(prodFiles, testFiles.spec, testFiles.step), function (file) {
-            files[file] = 'browserify';
+          files[file] = ['webpack', 'sourcemap'];
         });
 
         return files;
@@ -17,14 +17,9 @@ module.exports = function (config) {
 
     config.set({
         basePath: files.basePath,
-        frameworks: ['mocha', 'chai', 'sinon', 'browserify'],
+        frameworks: ['mocha', 'chai', 'sinon'],
 
         preprocessors: preprocessor(),
-
-        browserify: {
-            debug: true,
-            transform: ['hbsfy']
-        },
 
         files: _.union(
             _.map(_.union(prodFiles, testFiles.spec, testFiles.step), function (file) {
@@ -48,7 +43,8 @@ module.exports = function (config) {
             'karma-sinon',
             'karma-bro',
             'karma-phantomjs-launcher',
-            'karma-chrome-launcher'
+            'karma-chrome-launcher',
+            'karma-webpack'
         ],
         captureTimeout: 6000
     });

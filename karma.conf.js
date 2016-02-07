@@ -9,7 +9,7 @@ module.exports = function (config) {
     function preprocessor() {
         var files = {};
         _.each(testFiles, function (file) {
-            files[file] = ['browserify'];
+            files[file] = ['webpack', 'sourcemap'];
         });
         _.each(prodFiles, function (file) {
             files[file] = ['coverage'];
@@ -20,13 +20,9 @@ module.exports = function (config) {
 
     config.set({
         basePath: '.',
-        frameworks: ['mocha', 'chai', 'sinon', 'browserify'],
+        frameworks: ['mocha', 'chai', 'sinon'],
         exclude: [],
         preprocessors: preprocessor(),
-        browserify: {
-            debug: true,
-            transform: ['hbsfy']
-        },
         files: _.map(testFiles, function (file) {
             return {pattern: file, watch: true}
         }),
@@ -42,7 +38,8 @@ module.exports = function (config) {
             'karma-mocha',
             'karma-bro',
             'karma-phantomjs-launcher',
-            'karma-sinon'
+            'karma-sinon',
+            'karma-webpack'
         ],
         captureTimeout: 6000
     });

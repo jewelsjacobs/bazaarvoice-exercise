@@ -5,14 +5,12 @@ module.exports = function (grunt) {
   // If an option name is not recognized, it can be aliased here.
   // See: https://github.com/shootaroo/jit-grunt#static-mappings
   require('jit-grunt')(grunt, {
-    server: 'grunt/tasks/server.js',
-    docs: 'grunt/tasks/docs.js'
+    //custom3: 'static/custom.js'
+  })({
+    customTasksDir: 'grunt/tasks'
   });
 
   require('load-grunt-config')(grunt, {
-    configPath: path.join(process.cwd(), 'grunt/config'),
-    jitGrunt: {
-      customTasksDir: 'grunt/tasks'
-    }
+    configPath: path.join(process.cwd(), 'grunt/config')
   });
 };

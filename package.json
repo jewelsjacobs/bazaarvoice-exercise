@@ -5,13 +5,16 @@
   "main": "server/index.js",
   "scripts": {
     "test": "grunt eslint && grunt test:bdd && grunt test:unit",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "postinstall": "node -e \"try{require('fs').symlinkSync('../static','node_modules/static','dir')}catch(e){}\" && node -e \"try{require('fs').symlinkSync('../test','node_modules/test','dir')}catch(e){}\" && node -e \"try{require('fs').symlinkSync('../server','node_modules/server','dir')}catch(e){}\""
   },
   "author": "Julia Jacobs <jjacobs2000@me.com> (http://jjacobs2000.myportfolio.com/)",
   "dependencies": {
     "body-parser": "^1.14.2",
     "cookie-parser": "^1.4.1",
     "express": "^4.12.3",
+    "jquery": "^2.2.0",
+    "lodash": "^4.2.1",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
     "node-random": "^1.0.0"
@@ -41,6 +44,7 @@
     "grunt-karma": "^0.12.1",
     "grunt-kss": "^4.0.0",
     "grunt-mocha-cov": "0.4.x",
+    "grunt-modulus-deploy": "^0.1.8",
     "grunt-nodemon": "~0.4.1",
     "grunt-open": "^0.2.3",
     "grunt-rename": "^0.1.4",
@@ -56,6 +60,8 @@
     "karma-mocha": "^0.2.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sinon": "^1.0.3",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
     "kss": "^2.4.0",
     "load-grunt-config": "^0.19.1",
     "sinon": "^1.10.2",

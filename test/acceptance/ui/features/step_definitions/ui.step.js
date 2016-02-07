@@ -1,5 +1,3 @@
-/* jshint -W030 */
-
 module.exports = (function () {
     'use strict';
     var English = require('yadda').localisation.English,
@@ -15,23 +13,17 @@ module.exports = (function () {
             { "_id": 2, "title": "This Is Another Title", "body": "This is some body text!" }
         ],
 
-        app = require('../../../../../src/ui/app'),
+        app = require('static/js/main.js'),
 
         server;
 
     beforeEach(function () {
         server = sinon.fakeServer.create();
 
-        server.respondWith('GET', '/thought', [
+        server.respondWith('GET', '/word', [
             200,
             { 'Content-Type': 'application/json' },
-            JSON.stringify(dummyThoughts)
-        ]);
-
-        server.respondWith('POST', '/thought', [
-            201,
-            { 'Content-Type': 'application/json' },
-            JSON.stringify([{href: '/thought' + 9999}])
+            JSON.stringify({ "word": "askew"})
         ]);
     });
 

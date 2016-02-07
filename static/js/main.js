@@ -1,3 +1,12 @@
 'use strict';
 
-window.foo = function () { console.log('it works'); };
+module.exports = (function () {
+  'use strict';
+
+  var Guess = require('./views/guess'),
+    Display = require('./views/display'),
+    Play = require('./actions/play'),
+    Score = require('./views/score');
+
+    Play.start;
+}());

@@ -8,9 +8,9 @@ module.export = (function () {
         English = Yadda.localisation.English,
         FeatureParser = Yadda.parsers.FeatureParser,
         parser = new FeatureParser(English),
-        steps = require('./features/step_definitions/thought-ui.step'),
+        steps = require('./features/step_definitions/ui.step.js'),
         yadda = new Yadda.Yadda(steps),
-        loaderFeature = $.get('base/test/acceptance/ui/features/thought-ui.feature').responseText,
+        loaderFeature = $.get('base/test/acceptance/ui/features/ui.feature').responseText,
         feature = parser.parse(loaderFeature);
 
     Yadda.plugins.mocha.AsyncScenarioLevelPlugin.init();

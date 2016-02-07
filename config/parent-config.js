@@ -8,35 +8,23 @@ module.exports = function (mainDir, cwd) {
     return {
         basePath: cwd + mainDir,
         ui_prod: [
-            'src/ui/app.js',
-            'src/ui/collections/thought-collection.js',
-            'src/ui/models/thought-model.js',
-            'src/ui/views/thought-list.js',
-            'src/ui/views/thought-item.js'
+            'static/js/main.js'
         ],
         ui_test_unit: [
-            'test/unit/ui/collections/thought-collection.spec.js',
-            'test/unit/ui/models/thought-model.spec.js',
-            'test/unit/ui/views/thought-item.spec.js',
-            'test/unit/ui/views/thought-list.spec.js'
+            'test/unit/ui/ui.spec.js'
         ],
         ui_test_bdd: {
             spec: [ 'test/acceptance/ui/*.spec.js' ],
             step: [ 'test/acceptance/ui/features/step_definitions/*.step.js' ],
-            feature: [ 'test/acceptance/ui/features/thought-ui.feature' ]
+            feature: [ 'test/acceptance/ui/features/ui.feature' ]
         },
         Default: {
-            projRoot: cwd + mainDir + 'src',
-            serverRoot: cwd + mainDir + 'src/server',
+            projRoot: cwd + mainDir + 'static/js',
+            serverRoot: cwd + mainDir + 'server',
             testRoot: cwd + mainDir + 'test'
         },
         TestVals: {
-            knownObjectId: "52ffef5e3242c4a82909c53f"
-        },
-        database: {
-            host: "localhost",
-            port: 27017,
-            name: "thoughts"
+            word: "bucket"
         },
         server: {
             port: 8080
