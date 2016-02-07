@@ -43,6 +43,7 @@
     "grunt-mocha-cov": "0.4.x",
     "grunt-nodemon": "~0.4.1",
     "grunt-open": "^0.2.3",
+    "grunt-rename": "^0.1.4",
     "grunt-sass": "^1.0.0",
     "grunt-webpack": "^1.0.8",
     "grunt-zip": "^0.17.1",

@@ -1,3 +1,3 @@
 module.exports = function(grunt) {
-  grunt.registerTask('docs', ['clean:docs', 'jsdoc', 'apidoc', 'copy', 'kss', 'gh-pages']);
+  grunt.registerTask('docs', ['clean:docs', 'jsdoc', 'apidoc', 'copy', 'rename', 'kss', 'gh-pages']);
 };
