@@ -2,8 +2,8 @@
 
 var express = require('express');
 var path = require('path');
-var port = process.env.port || 3000;
 var app = express();
+var port = process.env.PORT || 3000;
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -32,5 +32,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(port, function () {
-  console.log('Server listening at port ' + port + ' in ' +  app.get('env') + 'mode');
+  console.log('Server listening at port ' + port + ' in ' + app.get('env') + ' mode');
 });
