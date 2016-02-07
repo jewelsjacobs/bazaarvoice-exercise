@@ -7,13 +7,13 @@
 - CI with TravisCI
 
 ### Documentation
-- [CSS Documentation](http://html5devgal.com/bazaarvoice-exercise/) with [KSS](http://warpspire.com/posts/kss/)
-- [API Documentation](http://html5devgal.com/bazaarvoice-exercise/jsdoc/apidoc) with [apidocjs](http://apidocjs.com/)
-- [Jsdoc documentation](http://html5devgal.com/bazaarvoice-exercise/jsdoc) with [jsdoc](http://usejsdoc.org/)
+- [CSS Documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/) with [KSS](http://warpspire.com/posts/kss/)
+- [API Documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/jsdoc/apidoc) with [apidocjs](http://apidocjs.com/)
+- [Jsdoc documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/jsdoc) with [jsdoc](http://usejsdoc.org/)
 
 ### Hosted
 - Hosted on free Modulus trial
-- Documentation hosted on [Github Pages](http://html5devgal.com/bazaarvoice-exercise/) 
+- Documentation hosted on [Github Pages](http://jewelsjacobs.github.io/bazaarvoice-exercise/) 
 
 ### Automation
 - Grunt options and tasks organized using load-grunt-config and jit-grunt
