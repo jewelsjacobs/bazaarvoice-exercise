@@ -587,102 +587,12 @@ both layout convenience and specific styling.</p>
           Example
         </div>
         <div class="kss-modifier__example">
-          <script>
-    var rows = [{
-        row: [
-            {class: "column-3", span: 3},
-            {class: "column-3", span: 3},
-            {class: "column-6", span: 6}
-        ],
-        row: [
-            {class: "column-4", span: 3},
-            {class: "column-3", span: 3},
-            {class: "column-6", span: 6}
-        ],
-        row: [
-            {class: "column-2", span: 2},
-            {class: "column-2", span: 2},
-            {class: "column-1", span: 1},
-            {class: "column-4", span: 4},
-            {class: "column-1", span: 1},
-            {class: "column-1", span: 1},
-            {class: "column-1", span: 1}
-        ],
-        row: [
-            {class: "column-12", span: 12}
-        ]
-    }];
-    var columns = function(row) {
-        var out = '<div class="row">';
-
-        for (var column in row) {
-            out = out + '<div class="' + row[column].class + '"><span>' + + row[column].span + '</span>';
-        }
-        return out + '</div>';
-    };
-
-    Handlebars.registerHelper('div', function(items, options) {
-        var out = '<section class="wrapper">';
-
-        for(var i=0, l=items.length; i<l; i++) {
-            out = out + '<div class="row">' + options.fn(items[i]) + "</div>";
-        }
-
-        return out + '</section>';
-    });
-
-</script>
-
+          
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;script&gt;
-    var rows = [{
-        row: [
-            {class: &quot;column-3&quot;, span: 3},
-            {class: &quot;column-3&quot;, span: 3},
-            {class: &quot;column-6&quot;, span: 6}
-        ],
-        row: [
-            {class: &quot;column-4&quot;, span: 3},
-            {class: &quot;column-3&quot;, span: 3},
-            {class: &quot;column-6&quot;, span: 6}
-        ],
-        row: [
-            {class: &quot;column-2&quot;, span: 2},
-            {class: &quot;column-2&quot;, span: 2},
-            {class: &quot;column-1&quot;, span: 1},
-            {class: &quot;column-4&quot;, span: 4},
-            {class: &quot;column-1&quot;, span: 1},
-            {class: &quot;column-1&quot;, span: 1},
-            {class: &quot;column-1&quot;, span: 1}
-        ],
-        row: [
-            {class: &quot;column-12&quot;, span: 12}
-        ]
-    }];
-    var columns = function(row) {
-        var out = &#x27;&lt;div class=&quot;row&quot;&gt;&#x27;;
-
-        for (var column in row) {
-            out = out + &#x27;&lt;div class=&quot;&#x27; + row[column].class + &#x27;&quot;&gt;&lt;span&gt;&#x27; + + row[column].span + &#x27;&lt;/span&gt;&#x27;;
-        }
-        return out + &#x27;&lt;/div&gt;&#x27;;
-    };
-
-    Handlebars.registerHelper(&#x27;div&#x27;, function(items, options) {
-        var out = &#x27;&lt;section class=&quot;wrapper&quot;&gt;&#x27;;
-
-        for(var i=0, l=items.length; i&lt;l; i++) {
-            out = out + &#x27;&lt;div class=&quot;row&quot;&gt;&#x27; + options.fn(items[i]) + &quot;&lt;/div&gt;&quot;;
-        }
-
-        return out + &#x27;&lt;/section&gt;&#x27;;
-    });
-
-&lt;/script&gt;
-</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html"></code></pre>
       </div>
 
       </section>
