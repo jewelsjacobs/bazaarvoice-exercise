@@ -31,6 +31,4 @@ app.get('/', function (req, res) {
   res.sendFile(path.resolve(__dirname, '../static/index.html'));
 });
 
-app.listen(port, '0.0.0.0', function () {
-  console.log('Server listening at http://%s:%s', this.address().address, port);
-});
+app.listen(port);
