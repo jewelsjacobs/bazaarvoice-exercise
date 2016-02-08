@@ -7,30 +7,33 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-*,
-*:after,
-*:before {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+.wrapper, .row {
+  *zoom: 1; }
+  .wrapper:before, .row:before, .wrapper:after, .row:after {
+    content: " ";
+    display: table; }
+  .wrapper:after, .row:after {
+    clear: both; }
 
 h1 {
   font-family: "Special Elite", Arial, serif;
-  font-weight: 400; }
+  font-weight: 400;
+  font-size: 60px; }
 
 h2 {
   font-family: "Special Elite", Arial, serif;
-  font-weight: 400; }
+  font-weight: 400;
+  font-size: 30px; }
 
 h3 {
   font-family: "Special Elite", Arial, serif;
-  font-weight: 400; }
+  font-weight: 400;
+  font-size: 20px; }
 
 .stencil {
   font-family: "Allerta Stencil", Arial, serif;
-  font-weight: 400; }
+  font-weight: 400;
+  font-size: 10px; }
 
 *,
 *:after,
@@ -40,6 +43,14 @@ h3 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+.wrapper, .row {
+  *zoom: 1; }
+  .wrapper:before, .row:before, .wrapper:after, .row:after {
+    content: " ";
+    display: table; }
+  .wrapper:after, .row:after {
+    clear: both; }
 
 *, *:after, *:before {
   margin: 0;
@@ -47,6 +58,13 @@ h3 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+.demo {
+  color: #363742;
+  display: block;
+  background: #ffb283;
+  padding: 1em 0;
+  text-align: center; }
 
 img {
   width: auto;
@@ -100,6 +118,14 @@ img {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+.wrapper, .row {
+  *zoom: 1; }
+  .wrapper:before, .row:before, .wrapper:after, .row:after {
+    content: " ";
+    display: table; }
+  .wrapper:after, .row:after {
+    clear: both; }
 
 .btn {
   display: inline-block;
