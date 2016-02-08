@@ -4,8 +4,17 @@ var $ = require('jquery'),
   Service = require('./service'),
   _ = require('lodash');
 
-exports.start = (function () {
-  Service.getWord;
-  Service.setGuess;
-  Service.setCounter;
-}());
+module.exports = {
+  start: (function () {
+    Service.getWord;
+  }()),
+
+  end: function () {
+    if (localStorage.getItem('misses') >= 7) {
+      $("#message").text("You have guessed incorrectly 7 times. Game over");
+    }
+    if (localStorage.getItem('hits') >= localStorage.getItem('word').length) {
+      $("#message").text("You have won!");
+    }
+  }
+};

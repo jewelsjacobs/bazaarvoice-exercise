@@ -9,4 +9,7 @@ module.exports = (function () {
     Score = require('./views/score');
 
     Play.start;
+    Guess.init;
+    Display.init;
+    Score.init;
 }());

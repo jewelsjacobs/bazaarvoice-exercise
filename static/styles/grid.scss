@@ -34,9 +34,11 @@
 .demo {
   color: #363742;
   display: block;
-  background: #ffb283;
+  background: $off-wht;
   padding: 1em 0;
   text-align: center;
+  @include inset-box-shadow;
+  @include rounded;
 }
 
 img {

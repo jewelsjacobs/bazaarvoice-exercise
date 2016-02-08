@@ -1,6 +1,7 @@
 'use strict';
 
-var _ = require('lodash');
+var _ = require('lodash'),
+  Play = require('./play');
 
 module.exports = {
 
@@ -11,6 +12,10 @@ module.exports = {
       return word.split("")[key] === letter ? letter : value;
     });
     localStorage.setItem('guess', guess.join(''));
+    var counter = localStorage.getItem('hits');
+    counter = parseInt(counter);
+    counter++;
+    localStorage.setItem('hits', counter);
     return "You have guessed a correct letter";
   },
 

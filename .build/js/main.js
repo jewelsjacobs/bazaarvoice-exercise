@@ -50,11 +50,14 @@
 	  'use strict';
 	
 	  var Guess = __webpack_require__(1),
-	    Display = __webpack_require__(7),
-	    Play = __webpack_require__(8),
+	    Display = __webpack_require__(8),
+	    Play = __webpack_require__(7),
 	    Score = __webpack_require__(9);
 	
 	    Play.start;
+	    Guess.init;
+	    Display.init;
+	    Score.init;
 	}());
 
 
@@ -66,17 +69,23 @@
 	
 	var $ = __webpack_require__(2),
 	  Service = __webpack_require__(3),
+	  Play = __webpack_require__(7),
 	  _ = __webpack_require__(5);
 	
-	module.exports = (function () {
-	  'use strict';
-	  // process the form
-	  $('#enterLetter').on('click', function(event) {
-	    var message = Service.submitGuess($('#letter').val());
-	    $("#message").text(message);
-	    $( "#display section:first-child" ).trigger("updateDisplay");
-	  });
-	}());
+	module.exports = {
+	  init: (function () {
+	    $('#enterLetter').on('click', function(event) {
+	      var message = Service.submitGuess($('#letter').val());
+	      $("#message").text(message);
+	      var guesses = localStorage.getItem('guesses');
+	      guesses += " " + $('#letter').val();
+	      localStorage.setItem('guesses', guesses);
+	      $("#display section:first-child").trigger("updateDisplay");
+	      $("#score").trigger( "updateScores");
+	      Play.end();
+	    });
+	  }())
+	};
 
 
 /***/ },
@@ -9924,29 +9933,25 @@
 	
 	var $ = __webpack_require__(2),
 	  guess = __webpack_require__(4),
+	  Views = __webpack_require__(8),
 	  _ = __webpack_require__(5);
 	
 	module.exports = {
 	  getWord: (function () {
+	    localStorage.clear();
 	    $.getJSON("word", function (data) {
 	      localStorage.setItem('word', data.word);
+	      var word = localStorage.getItem('word');
+	      var guess = "";
+	      _.forEach(word, function (char) {
+	        guess += ".";
+	      });
+	      localStorage.setItem('misses', 0);
+	      localStorage.setItem('hits', 0);
+	      localStorage.setItem('guesses', '');
+	      localStorage.setItem('guess', guess);
+	      Views.createDisplay(guess);
 	    });
-	
-	  }()),
-	
-	  setGuess: (function () {
-	    var guess = "";
-	    var word = localStorage.getItem('word');
-	
-	    _.forEach(word, function (char) {
-	      guess += ".";
-	    });
-	
-	    localStorage.setItem('guess', guess);
-	  }()),
-	
-	  setCounter: (function () {
-	    localStorage.setItem('counter', 0);
 	  }()),
 	
 	  submitGuess: function (letter) {
@@ -9962,10 +9967,10 @@
 	        case "invalid":
 	          return routeGuess[0].message;
 	        case "notInWord":
-	          var counter = localStorage.getItem('counter');
+	          var counter = localStorage.getItem('misses');
 	          counter = parseInt(counter);
 	          counter++;
-	          localStorage.setItem('counter', counter);
+	          localStorage.setItem('misses', counter);
 	          return routeGuess[0].message;
 	      }
 	    }
@@ -9979,7 +9984,8 @@
 
 	'use strict';
 	
-	var _ = __webpack_require__(5);
+	var _ = __webpack_require__(5),
+	  Play = __webpack_require__(7);
 	
 	module.exports = {
 	
@@ -9990,6 +9996,10 @@
 	      return word.split("")[key] === letter ? letter : value;
 	    });
 	    localStorage.setItem('guess', guess.join(''));
+	    var counter = localStorage.getItem('hits');
+	    counter = parseInt(counter);
+	    counter++;
+	    localStorage.setItem('hits', counter);
 	    return "You have guessed a correct letter";
 	  },
 	
@@ -24612,36 +24622,23 @@
 	'use strict';
 	
 	var $ = __webpack_require__(2),
+	  Service = __webpack_require__(3),
 	  _ = __webpack_require__(5);
 	
-	module.exports = (function () {
-	  'use strict';
-	  if (!!localStorage.getItem('guess')) {
-	    var display = $("#display section:first-child");
-	    var guess = localStorage.getItem('guess');
-	    var columns = Math.floor(12 / guess.length);
-	    _.forEach(guess, function(char){
-	      var markup = '<div class="column-' + columns +'">';
-	      if (char === '.') {
-	        markup += '<span class="demo stencil"> </span>';
-	      } else {
-	        markup += '<span class="demo stencil">' + char + '</span>';
-	      }
-	      markup += '</div>';
-	      display.append(markup);
-	    });
+	module.exports = {
+	  start: (function () {
+	    Service.getWord;
+	  }()),
+	
+	  end: function () {
+	    if (localStorage.getItem('misses') >= 7) {
+	      $("#message").text("You have guessed incorrectly 7 times. Game over");
+	    }
+	    if (localStorage.getItem('hits') >= localStorage.getItem('word').length) {
+	      $("#message").text("You have won!");
+	    }
 	  }
-	
-	  $( "#display section:first-child" ).on( "updateDisplay", function( event ) {
-	      $(this).find('.stencil').each(function(i) {
-	        if (localStorage.getItem('guess')[i] !== '.') {
-	          $(this).text(localStorage.getItem('guess')[i]);
-	        }
-	      });
-	  });
-	
-	}());
-	
+	};
 
 
 /***/ },
@@ -24651,14 +24648,38 @@
 	'use strict';
 	
 	var $ = __webpack_require__(2),
-	  Service = __webpack_require__(3),
 	  _ = __webpack_require__(5);
 	
-	exports.start = (function () {
-	  Service.getWord;
-	  Service.setGuess;
-	  Service.setCounter;
-	}());
+	module.exports = {
+	  init: (function () {
+	    $( "#display section:first-child" ).on( "updateDisplay", function( event ) {
+	      $(this).find('.stencil').each(function(i) {
+	        if (localStorage.getItem('guess')[i] !== '.') {
+	          $(this).text(localStorage.getItem('guess')[i]);
+	        }
+	      });
+	    });
+	  }()),
+	
+	  createDisplay: function (guess) {
+	    var display = $("#display section:first-child");
+	    display.empty();
+	    if (!!guess) {
+	      var columns = Math.round(12 / guess.length);
+	      _.forEach(guess, function(char){
+	        var markup = '<div class="column-' + columns +'">';
+	        if (char === '.') {
+	          markup += '<span class="demo stencil"> </span>';
+	        } else {
+	          markup += '<span class="demo stencil">' + char + '</span>';
+	        }
+	        markup += '</div>';
+	        display.append(markup);
+	      });
+	    }
+	  }
+	};
+	
 
 
 /***/ },
@@ -24670,10 +24691,15 @@
 	var $ = __webpack_require__(2),
 	  _ = __webpack_require__(5);
 	
-	module.exports = (function () {
-	  'use strict';
-	
-	}());
+	module.exports = {
+	  init: (function () {
+	    $("#score").on( "updateScores", function( event ) {
+	      $("#hits").text("Hits: " + localStorage.getItem('hits'));
+	      $("#misses").text("Misses: " + localStorage.getItem('misses'));
+	      $("#guesses").text("Guesses: " + localStorage.getItem('guesses'));
+	    });
+	  }())
+	};
 
 
 /***/ }

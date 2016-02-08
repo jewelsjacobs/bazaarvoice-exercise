@@ -62,9 +62,15 @@ h3 {
 .demo {
   color: #363742;
   display: block;
-  background: #ffb283;
+  background: rgba(255, 255, 255, 0.4);
   padding: 1em 0;
-  text-align: center; }
+  text-align: center;
+  -webkit-box-shadow: inset 0px 1px 2px #CCC;
+  -moz-box-shadow: inset 0px 1px 2px #CCC;
+  box-shadow: inset 0px 1px 2px #CCC;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em; }
 
 img {
   width: auto;
