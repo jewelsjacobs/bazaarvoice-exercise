@@ -9,6 +9,7 @@ module.exports = (function () {
   // process the form
   $('#enterLetter').on('click', function(event) {
     var message = Service.submitGuess($('#letter').val());
-    console.log(message);
+    $("#message").text(message);
+    $( "#display section:first-child" ).trigger("updateDisplay");
   });
 }());

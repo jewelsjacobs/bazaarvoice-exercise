@@ -8,14 +8,20 @@
   </head>
 <body>
 <h1>Hangman</h1>
-<div id="container" class="grid">
-  <div id="guess" class="grid">
+<div id="container">
+  <div id="guess">
     <label for="letter"><span class="stencil">Enter guess</span></label>
     <input type="text" name="letter" id="letter">
     <button id="enterLetter" class="btn blue" type="button"><span class="stencil">Submit</span></button>
   </div>
-  <div id="display" class="grid"></div>
-  <div id="score" class="grid"></div>
+  <div id="display">
+    <section class="wrapper">
+
+    </section>
+  </div>
+  <div id="score">
+    <div id="message" class="stencil"></div>
+  </div>
 </div>
   <script src="/static/js/main.js"></script>
 

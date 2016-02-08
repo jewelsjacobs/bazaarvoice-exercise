@@ -29,12 +29,12 @@
 .btn {
   display: inline-block;
   margin: 1rem;
-  padding: .938em 1.875em;
-  border: .094em solid;
-  border-radius: .625em;
+  padding: .2em .5em;
+  border: .07em solid;
+  border-radius: .3em;
   box-shadow: 0 .375em .313em -.313em rgba(black,.8), inset 0 .063em $off-wht, inset 0 -.188em rgba(black,.15);
   color: #FFF;
-  font: bold 1.8rem sans-serif;
+  font: bold 1.5rem sans-serif;
   @include trans(0.2s ease-in-out);
   text: {
     transform: uppercase;
@@ -88,6 +88,7 @@ input[type='text'] {
   font-size:14px;
   line-height:1.5em;
   padding:8px;
+  margin: 0 0 0 10px;
 
   border:1px solid #aaa;
   background-color:#eee;

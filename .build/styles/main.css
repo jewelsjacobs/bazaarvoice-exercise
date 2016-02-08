@@ -33,7 +33,7 @@ h3 {
 .stencil {
   font-family: "Allerta Stencil", Arial, serif;
   font-weight: 400;
-  font-size: 10px; }
+  font-size: 20px; }
 
 *,
 *:after,
@@ -130,12 +130,12 @@ img {
 .btn {
   display: inline-block;
   margin: 1rem;
-  padding: .938em 1.875em;
-  border: .094em solid;
-  border-radius: .625em;
+  padding: .2em .5em;
+  border: .07em solid;
+  border-radius: .3em;
   box-shadow: 0 0.375em 0.313em -0.313em rgba(0, 0, 0, 0.8), inset 0 0.063em rgba(255, 255, 255, 0.4), inset 0 -0.188em rgba(0, 0, 0, 0.15);
   color: #FFF;
-  font: bold 1.8rem sans-serif;
+  font: bold 1.5rem sans-serif;
   -webkit-transition: 0.2s ease-in-out;
   -moz-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
@@ -189,6 +189,7 @@ input[type='text'] {
   font-size: 14px;
   line-height: 1.5em;
   padding: 8px;
+  margin: 0 0 0 10px;
   border: 1px solid #aaa;
   background-color: #eee;
   outline: 0;
@@ -233,5 +234,8 @@ input[type='text'] {
   .mod-input.valid input {
     border-color: #6e5;
     background-color: #dfd; }
+
+body {
+  padding: 30px; }
 
 /*# sourceMappingURL=main.css.map */
