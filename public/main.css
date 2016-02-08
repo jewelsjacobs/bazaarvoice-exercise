@@ -62,9 +62,15 @@ h3 {
 .demo {
   color: #363742;
   display: block;
-  background: #ffb283;
+  background: rgba(255, 255, 255, 0.4);
   padding: 1em 0;
-  text-align: center; }
+  text-align: center;
+  -webkit-box-shadow: inset 0px 1px 2px #CCC;
+  -moz-box-shadow: inset 0px 1px 2px #CCC;
+  box-shadow: inset 0px 1px 2px #CCC;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em; }
 
 img {
   width: auto;
@@ -130,12 +136,12 @@ img {
 .btn {
   display: inline-block;
   margin: 1rem;
-  padding: .938em 1.875em;
-  border: .094em solid;
-  border-radius: .625em;
+  padding: .2em .5em;
+  border: .07em solid;
+  border-radius: .3em;
   box-shadow: 0 0.375em 0.313em -0.313em rgba(0, 0, 0, 0.8), inset 0 0.063em rgba(255, 255, 255, 0.4), inset 0 -0.188em rgba(0, 0, 0, 0.15);
   color: #FFF;
-  font: bold 1.8rem sans-serif;
+  font: bold 1.5rem sans-serif;
   -webkit-transition: 0.2s ease-in-out;
   -moz-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
@@ -189,6 +195,7 @@ input[type='text'] {
   font-size: 14px;
   line-height: 1.5em;
   padding: 8px;
+  margin: 0 0 0 10px;
   border: 1px solid #aaa;
   background-color: #eee;
   outline: 0;
@@ -233,5 +240,8 @@ input[type='text'] {
   .mod-input.valid input {
     border-color: #6e5;
     background-color: #dfd; }
+
+body {
+  padding: 30px; }
 
 /*# sourceMappingURL=main.css.map */
