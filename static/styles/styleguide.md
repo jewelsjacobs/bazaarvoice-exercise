@@ -12,7 +12,7 @@
 - [Jsdoc documentation](http://jewelsjacobs.github.io/bazaarvoice-exercise/jsdoc) with [jsdoc](http://usejsdoc.org/)
 
 ### Hosted
-- Hosted on free Modulus trial
+- [Hosted on free Modulus trial](http://bazaarvoice-exercise.mod.bz/)
 - Documentation hosted on [Github Pages](http://jewelsjacobs.github.io/bazaarvoice-exercise/) 
 
 ### Automation

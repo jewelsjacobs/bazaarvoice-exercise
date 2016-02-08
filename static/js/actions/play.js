@@ -7,4 +7,5 @@ var $ = require('jquery'),
 exports.start = (function () {
   Service.getWord;
   Service.setGuess;
+  Service.setCounter;
 }());

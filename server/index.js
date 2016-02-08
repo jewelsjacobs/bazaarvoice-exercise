@@ -34,3 +34,5 @@ app.get('/', function (req, res) {
 app.listen(port, function () {
   console.log('Server listening at port ' + port + ' in ' + app.get('env') + ' mode');
 });
+
+module.exports = app;

@@ -1,0 +1,42 @@
+$special-elite-font: 'Special Elite', Arial, serif;
+$allerta-stencil-font: 'Allerta Stencil', Arial, serif;
+$font-weight: 400;
+$header-font-size: 60;
+$font-size: 20;
+
+// Fonts
+//
+// All kinds of cool fonts
+//
+// Style guide: hangman.fonts
+
+// Headers
+//
+// Uses Google's Special Elite Web Font.
+//
+// Markup:
+//<h1>Header 1</h1>
+//<h2>Header 2</h2>
+//<h3>Header 3</h3>
+//
+// Style guide: hangman.fonts.headers
+@for $i from 1 through 3 {
+  h#{$i} {
+    font-family: $special-elite-font;
+    font-weight: $font-weight;
+    font-size: $header-font-size / $i + px;
+  }
+}
+
+// Text
+//
+// Uses Google's Allerta Stencil Web Font.
+//
+// Markup: <span class="stencil">Stencil</span>
+//
+// Style guide: hangman.fonts.text
+.stencil {
+  font-family: $allerta-stencil-font;
+  font-weight: $font-weight;
+  font-size: $font-size + px;
+}

@@ -5,5 +5,8 @@ var $ = require('jquery'),
 
 module.exports = (function () {
   'use strict';
+  if (!!localStorage.getItem('guess')) {
+
+  }
 
 }());

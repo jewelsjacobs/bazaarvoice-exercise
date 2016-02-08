@@ -1,0 +1,74 @@
+@import "variables";
+@import "mixins";
+
+// Grid Layout
+//
+// Simple grid based layout
+//
+// Markup: <section class="wrapper">
+//   <div class="row">
+//     <div class="column-3">
+//        <span class="demo stencil">3</span>
+//    </div>
+//     <div class="column-3">
+//        <span class="demo stencil">3</span>
+//    </div>
+//    <div class="column-6">
+//        <span class="demo stencil">6</span>
+//    </div>
+//   </div>
+//   <div class="row">
+//     <div class="column-12">
+//      <span class="demo stencil">12</span>
+//     </div>
+//   </div>
+//  </section>
+//
+// Style guide: hangman.layout
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  @include border-box;
+}
+
+.demo {
+  color: #363742;
+  display: block;
+  background: #ffb283;
+  padding: 1em 0;
+  text-align: center;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper, .row {
+  @extend %clearfix;
+}
+
+[class*='column-'] {
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px;
+}
+
+@media #{$breakpoint-medium} {
+  .wrapper {
+    width: 95%;
+    max-width: $grid-max-width;
+  }
+  @for $i from 1 through $grid-columns {
+    .column-#{$i} {
+      width: 100% / $grid-columns * $i;
+    }
+  }
+}

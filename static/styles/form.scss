@@ -1,0 +1,177 @@
+@import "colors";
+@import "variables";
+@import "mixins";
+
+// Forms
+//
+// Below are the form elements used on the site.
+//
+// Style guide: hangman.forms
+
+
+// Buttons
+//
+// Your standard, everyday buttons.
+//
+// .btn      - button
+// .purple   - purple button
+// .blue     - blue button
+// .green    - green button
+// .orange   - orange button
+// :hover    - Highlight the text box when hovering
+// :focus    - Similar to `:hover`, however it should demand more attention than
+//             when an input is simply hovered.
+// :disabled - When disabled, the input's appearance should reflect as such.
+//
+// Markup: <button class="btn {{modifier_class}}">
+//
+// Style guide: hangman.forms.buttons
+.btn {
+  display: inline-block;
+  margin: 1rem;
+  padding: .938em 1.875em;
+  border: .094em solid;
+  border-radius: .625em;
+  box-shadow: 0 .375em .313em -.313em rgba(black,.8), inset 0 .063em $off-wht, inset 0 -.188em rgba(black,.15);
+  color: #FFF;
+  font: bold 1.8rem sans-serif;
+  @include trans(0.2s ease-in-out);
+  text: {
+    transform: uppercase;
+    decoration: none;
+    shadow: 0 .063em rgba(black,.3);
+  }
+  cursor:pointer;
+}
+
+.purple {
+  @include btn-theme($purple);
+}
+.blue {
+  @include btn-theme($blue);
+}
+.green {
+  @include btn-theme($green);
+}
+.orange {
+  @include btn-theme($orange);
+}
+
+// Text Input
+//
+// Below are the text-oriented form elements used on the site.
+//
+// Style guide: hangman.forms.text
+
+
+// Single-Line Text Boxes
+//
+// Your standard, everyday text boxes.
+//
+// :hover    - Highlight the text box when hovering
+// :focus    - Similar to `:hover`, however it should demand more attention than
+//             when an input is simply hovered.
+// :disabled - When disabled, the input's appearance should reflect as such.
+//
+// Markup: <input type="text" class="stencil {{modifier_class}}" value="Text input"/>
+//
+// Weight: -1
+//
+// Style guide: hangman.forms.text.single-line
+input[type='text'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  box-sizing:border-box;
+
+  font-size:14px;
+  line-height:1.5em;
+  padding:8px;
+
+  border:1px solid #aaa;
+  background-color:#eee;
+  outline:0;
+
+  border-radius:3px;
+  box-shadow:inset 1px 1px 1px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    border-color:#999;
+    background-color:#f0f0f0;
+  }
+
+  &:focus {
+    border-color:#89e;
+    background-color:#fff;
+    box-shadow:inset 1px 1px 2px rgba(20, 20, 120, 0.3);
+  }
+
+  &:disabled {
+    border-color:#ccc;
+    background-color:#eee;
+    color:#999;
+  }
+}
+
+// Label/Text box Pairs
+//
+// All labelled text boxes should be included in a wrapper `<div>` element for
+// both layout convenience and specific styling.
+//
+// Markup:
+// <div class="mod-input text {{modifier_class}}">
+//   <label class="stencil">Text Label</label>
+//   {{> "hangman.forms.text.single-line" modifier_class=""}}
+// </div>
+//
+// .disabled  - Use this class when the text input inside is expected to be
+//              disabled.
+// .invalid   - Use this class if the input has failed a validation check.
+// .valid     - Use this class if the input has passed a validation check
+//              (intended for live validation in particular).
+//
+// Style guide: hangman.forms.text.label-pairs
+.mod-input {
+  position:relative;
+  display:block;
+
+  &>label {
+    width:45%; font-weight:bold;
+  }
+
+  &>input, &>label {
+    display  : -moz-inline-stack;
+    display  : inline-block;
+    zoom     : 1;
+    *display : inline;
+  }
+
+  &.disabled {
+    color:#888;
+    input {
+      border-color:#ccc;
+      background-color:#eee;
+      color:#999;
+    }
+  }
+
+  &.invalid {
+    label {
+      color:#911;
+    }
+    input {
+      border-color:#e65;
+      background-color:#fdd;
+    }
+  }
+  &.valid {
+    label {
+      color:#191;
+    }
+    input {
+      border-color:#6e5;
+      background-color:#dfd;
+    }
+  }
+}

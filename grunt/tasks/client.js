@@ -1,3 +1,3 @@
 module.exports = function(grunt) {
-  grunt.registerTask('client', ['webpack:dev', 'sass:dev', 'docs']);
+  grunt.registerTask('client', ['sass:dev', 'webpack:dev', 'docs']);
 };

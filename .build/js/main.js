@@ -50,9 +50,9 @@
 	  'use strict';
 	
 	  var Guess = __webpack_require__(1),
-	    Display = __webpack_require__(5),
-	    Play = __webpack_require__(6),
-	    Score = __webpack_require__(8);
+	    Display = __webpack_require__(7),
+	    Play = __webpack_require__(8),
+	    Score = __webpack_require__(9);
 	
 	    Play.start;
 	}());
@@ -65,22 +65,15 @@
 	'use strict';
 	
 	var $ = __webpack_require__(2),
-	  _ = __webpack_require__(3);
+	  Service = __webpack_require__(3),
+	  _ = __webpack_require__(5);
 	
 	module.exports = (function () {
-	
 	  'use strict';
 	  // process the form
-	  $('form').submit(function(event) {
-	
-	    // get the form data
-	    // there are many ways to get this data using jQuery (you can use the class or id also)
-	    var formData = {
-	      'guess': $('input[name=guess]').val()
-	    }
-	
-	    // stop the form from submitting the normal way and refreshing the page
-	    event.preventDefault();
+	  $('#enterLetter').on('click', function(event) {
+	    var message = Service.submitGuess($('#letter').val());
+	    console.log(message);
 	  });
 	}());
 
@@ -9924,6 +9917,100 @@
 
 /***/ },
 /* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var $ = __webpack_require__(2),
+	  guess = __webpack_require__(4),
+	  _ = __webpack_require__(5);
+	
+	module.exports = {
+	  getWord: (function () {
+	    $.getJSON("word", function (data) {
+	      localStorage.setItem('word', data.word);
+	    });
+	
+	  }()),
+	
+	  setGuess: (function () {
+	    var guess = "";
+	    var word = localStorage.getItem('word');
+	
+	    _.forEach(word, function (char) {
+	      guess += ".";
+	    });
+	
+	    localStorage.setItem('guess', guess);
+	  }()),
+	
+	  setCounter: (function () {
+	    localStorage.setItem('counter', 0);
+	  }()),
+	
+	  submitGuess: function (letter) {
+	    if (!!letter) {
+	      var routeGuess = guess.routeGuessResult(letter);
+	
+	      if (_.isEmpty(routeGuess)) {
+	        return guess.updateGuess(letter)
+	      }
+	
+	      switch (routeGuess[0].result) {
+	        case "alreadyGuessed":
+	        case "invalid":
+	          return routeGuess[0].message;
+	        case "notInWord":
+	          var counter = localStorage.getItem('counter');
+	          counter = parseInt(counter);
+	          counter++;
+	          localStorage.setItem('counter', counter);
+	          return routeGuess[0].message;
+	      }
+	    }
+	  }
+	};
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _ = __webpack_require__(5);
+	
+	module.exports = {
+	
+	  updateGuess: function (letter) {
+	    var word = localStorage.getItem('word');
+	    var guess = localStorage.getItem('guess');
+	    guess = _.map(guess.split(""), function(value, key){
+	      return word.split("")[key] === letter ? letter : value;
+	    });
+	    localStorage.setItem('guess', guess.join(''));
+	    return "You have guessed a correct letter";
+	  },
+	
+	  routeGuessResult: function (letter) {
+	    var word = localStorage.getItem('word');
+	    var guess = localStorage.getItem('guess');
+	
+	    var map = [
+	      {'result': "alreadyGuessed", 'condition': guess.indexOf(letter) !== -1, 'message': "You've already guessed this letter"},
+	      {'result': "invalid", 'condition': letter.length === 1 && !letter.match(/[a-z]/i), 'message': "You have not entered a letter"},
+	      {'result': "notInWord", 'condition': word.indexOf(letter) === -1, 'message': "Not a letter in the word"}
+	    ];
+	
+	    var results =  _.filter(map, 'condition');
+	
+	    return results;
+	  }
+	};
+
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -24499,10 +24586,10 @@
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module), (function() { return this; }())))
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -24518,83 +24605,21 @@
 
 
 /***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var $ = __webpack_require__(2),
-	  _ = __webpack_require__(3);
-	
-	module.exports = (function () {
-	  'use strict';
-	
-	}());
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var $ = __webpack_require__(2),
-	  Service = __webpack_require__(7),
-	  _ = __webpack_require__(3);
-	
-	exports.start = (function () {
-	  Service.getWord;
-	  Service.setGuess;
-	}());
-
-
-/***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var $ = __webpack_require__(2),
-	  _ = __webpack_require__(3);
+	  _ = __webpack_require__(5);
 	
-	var Service = {
-	  getWord: (function () {
-	    $.getJSON( "word", function(data) {
-	      localStorage.setItem('word', data.word);
-	    });
+	module.exports = (function () {
+	  'use strict';
+	  if (!!localStorage.getItem('guess')) {
 	
-	  }()),
+	  }
 	
-	  setGuess: (function () {
-	    var guess = "";
-	
-	    var word = localStorage.getItem('word');
-	
-	    for (var i = 0; i < word.length; i++) {
-	      guess += ".";
-	    }
-	
-	    localStorage.setItem('guess', guess);
-	  }()),
-	
-	  updateGuess: (function (letter) {
-	    var guess = "";
-	
-	    var word = localStorage.getItem('word');
-	
-	    for (var i = 0; i < word.length; i++) {
-	      if (word[i] === letter) {
-	        guess += letter
-	      } else {
-	        guess += ".";
-	      }
-	    }
-	
-	    localStorage.setItem('guess', guess);
-	  }())
-	};
-	
-	module.exports = Service;
+	}());
 
 
 /***/ },
@@ -24604,7 +24629,24 @@
 	'use strict';
 	
 	var $ = __webpack_require__(2),
-	  _ = __webpack_require__(3);
+	  Service = __webpack_require__(3),
+	  _ = __webpack_require__(5);
+	
+	exports.start = (function () {
+	  Service.getWord;
+	  Service.setGuess;
+	  Service.setCounter;
+	}());
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var $ = __webpack_require__(2),
+	  _ = __webpack_require__(5);
 	
 	module.exports = (function () {
 	  'use strict';

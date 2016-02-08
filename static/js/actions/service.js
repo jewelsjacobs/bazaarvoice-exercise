@@ -1,11 +1,12 @@
 'use strict';
 
 var $ = require('jquery'),
+  guess = require('./guess'),
   _ = require('lodash');
 
-var Service = {
+module.exports = {
   getWord: (function () {
-    $.getJSON( "word", function(data) {
+    $.getJSON("word", function (data) {
       localStorage.setItem('word', data.word);
     });
 
@@ -13,31 +14,38 @@ var Service = {
 
   setGuess: (function () {
     var guess = "";
-
     var word = localStorage.getItem('word');
 
-    for (var i = 0; i < word.length; i++) {
+    _.forEach(word, function (char) {
       guess += ".";
-    }
+    });
 
     localStorage.setItem('guess', guess);
   }()),
 
-  updateGuess: (function (letter) {
-    var guess = "";
+  setCounter: (function () {
+    localStorage.setItem('counter', 0);
+  }()),
 
-    var word = localStorage.getItem('word');
+  submitGuess: function (letter) {
+    if (!!letter) {
+      var routeGuess = guess.routeGuessResult(letter);
 
-    for (var i = 0; i < word.length; i++) {
-      if (word[i] === letter) {
-        guess += letter
-      } else {
-        guess += ".";
+      if (_.isEmpty(routeGuess)) {
+        return guess.updateGuess(letter)
+      }
+
+      switch (routeGuess[0].result) {
+        case "alreadyGuessed":
+        case "invalid":
+          return routeGuess[0].message;
+        case "notInWord":
+          var counter = localStorage.getItem('counter');
+          counter = parseInt(counter);
+          counter++;
+          localStorage.setItem('counter', counter);
+          return routeGuess[0].message;
       }
     }
-
-    localStorage.setItem('guess', guess);
-  }())
+  }
 };
-
-module.exports = Service;

@@ -2,7 +2,7 @@ Feature: As a user, I want a user interface to enable me to guess a random word 
 
   Scenario: Start
 
-    Given a user
+    Given a user starts the game
     When a user first sees the screen
     Then screen displays blanks for each letter of the word to be guessed
 

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "grunt eslint && grunt test:bdd && grunt test:unit",
     "start": "node server/index.js",
+    "kss": "kss-node --config='kss-node.json'",
     "postinstall": "node -e \"try{require('fs').symlinkSync('../static','node_modules/static','dir')}catch(e){}\" && node -e \"try{require('fs').symlinkSync('../test','node_modules/test','dir')}catch(e){}\" && node -e \"try{require('fs').symlinkSync('../server','node_modules/server','dir')}catch(e){}\""
   },
   "author": "Julia Jacobs <jjacobs2000@me.com> (http://jjacobs2000.myportfolio.com/)",
