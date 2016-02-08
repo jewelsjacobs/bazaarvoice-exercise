@@ -69,7 +69,7 @@
             <li class="kss-nav__menu-item">
               <a href="section-hangman.html#kssref-hangman-fonts-text">
                 <span class="kss-nav__ref kss-nav__ref-child">1.4.2</span
-                ><span class="kss-nav__name">.stencil   - used on spans, paragraphs, etc.</span>
+                ><span class="kss-nav__name">Text</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -249,45 +249,19 @@ GitHub.</p>
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Examples
-        </div>
-        <div class="kss-modifier__default-name kss-style">
-          Default styling
+          Example
         </div>
         <div class="kss-modifier__example">
-          <h1>Header 1</h1><h2>Header 2</h2><h3>Header 3</h3>
-        </div>
-        <div class="kss-modifier__name kss-style">
-          h1
-        </div>
-        <div class="kss-modifier__description kss-style">
-          Title
-        </div>
-        <div class="kss-modifier__example">
-          <h1>Header 1</h1><h2>Header 2</h2><h3>Header 3</h3>
-        </div>
-        <div class="kss-modifier__name kss-style">
-          h2
-        </div>
-        <div class="kss-modifier__description kss-style">
-          Subtitle
-        </div>
-        <div class="kss-modifier__example">
-          <h1>Header 1</h1><h2>Header 2</h2><h3>Header 3</h3>
-        </div>
-        <div class="kss-modifier__name kss-style">
-          h3
-        </div>
-        <div class="kss-modifier__description kss-style">
-          smaller
-        </div>
-        <div class="kss-modifier__example">
-          <h1>Header 1</h1><h2>Header 2</h2><h3>Header 3</h3>
+          <h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1&gt;Header 1&lt;/h1&gt;&lt;h2&gt;Header 2&lt;/h2&gt;&lt;h3&gt;Header 3&lt;/h3&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1&gt;Header 1&lt;/h1&gt;
+&lt;h2&gt;Header 2&lt;/h2&gt;
+&lt;h3&gt;Header 3&lt;/h3&gt;</code></pre>
       </div>
 
       </section>
@@ -302,13 +276,41 @@ GitHub.</p>
                 #hangman.fonts.text
             </span>
           </span>
-          .stencil   - used on spans, paragraphs, etc.
+          Text
         </a>
       </h3>
 
 
+      <div class="kss-description">
+        <p>Uses Google&#39;s Allerta Stencil Web Font.</p>
+
+      </div>
     </div>
 
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <span class="stencil">Stencil</span>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .stencil
+        </div>
+        <div class="kss-modifier__description kss-style">
+          used on spans, paragraphs, etc.
+        </div>
+        <div class="kss-modifier__example">
+          <span class="stencil">Stencil</span>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;span class=&quot;stencil&quot;&gt;Stencil&lt;/span&gt;</code></pre>
+      </div>
 
       </section>
       <section id="kssref-hangman-forms" class="kss-section kss-section--depth-2">
@@ -500,7 +502,7 @@ GitHub.</p>
           Default styling
         </div>
         <div class="kss-modifier__example">
-          <input type="text" class="[modifier class]" value="Text input"/>
+          <input type="text" class="stencil [modifier class]" value="Text input"/>
         </div>
         <div class="kss-modifier__name kss-style">
           :hover
@@ -509,7 +511,7 @@ GitHub.</p>
           Highlight the text box when hovering
         </div>
         <div class="kss-modifier__example">
-          <input type="text" class="pseudo-class-hover" value="Text input"/>
+          <input type="text" class="stencil pseudo-class-hover" value="Text input"/>
         </div>
         <div class="kss-modifier__name kss-style">
           :focus
@@ -518,7 +520,7 @@ GitHub.</p>
           Similar to <code>:hover</code>, however it should demand more attention than when an input is simply hovered.
         </div>
         <div class="kss-modifier__example">
-          <input type="text" class="pseudo-class-focus" value="Text input"/>
+          <input type="text" class="stencil pseudo-class-focus" value="Text input"/>
         </div>
         <div class="kss-modifier__name kss-style">
           :disabled
@@ -527,12 +529,12 @@ GitHub.</p>
           When disabled, the input&#39;s appearance should reflect as such.
         </div>
         <div class="kss-modifier__example">
-          <input type="text" class="pseudo-class-disabled" value="Text input"/>
+          <input type="text" class="stencil pseudo-class-disabled" value="Text input"/>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type=&quot;text&quot; class=&quot;[modifier class]&quot; value=&quot;Text input&quot;/&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type=&quot;text&quot; class=&quot;stencil [modifier class]&quot; value=&quot;Text input&quot;/&gt;</code></pre>
       </div>
 
       </section>
@@ -568,8 +570,8 @@ both layout convenience and specific styling.</p>
         </div>
         <div class="kss-modifier__example">
           <div class="mod-input text [modifier class]">
-  <label>Text Label</label>
-  <input type="text" class="" value="Text input"/></div>
+  <label style="stencil">Text Label</label>
+  <input type="text" class="stencil " value="Text input"/></div>
         </div>
         <div class="kss-modifier__name kss-style">
           .disabled
@@ -579,8 +581,8 @@ both layout convenience and specific styling.</p>
         </div>
         <div class="kss-modifier__example">
           <div class="mod-input text disabled">
-  <label>Text Label</label>
-  <input type="text" class="" value="Text input"/></div>
+  <label style="stencil">Text Label</label>
+  <input type="text" class="stencil " value="Text input"/></div>
         </div>
         <div class="kss-modifier__name kss-style">
           .invalid
@@ -590,8 +592,8 @@ both layout convenience and specific styling.</p>
         </div>
         <div class="kss-modifier__example">
           <div class="mod-input text invalid">
-  <label>Text Label</label>
-  <input type="text" class="" value="Text input"/></div>
+  <label style="stencil">Text Label</label>
+  <input type="text" class="stencil " value="Text input"/></div>
         </div>
         <div class="kss-modifier__name kss-style">
           .valid
@@ -601,15 +603,15 @@ both layout convenience and specific styling.</p>
         </div>
         <div class="kss-modifier__example">
           <div class="mod-input text valid">
-  <label>Text Label</label>
-  <input type="text" class="" value="Text input"/></div>
+  <label style="stencil">Text Label</label>
+  <input type="text" class="stencil " value="Text input"/></div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;mod-input text [modifier class]&quot;&gt;
-  &lt;label&gt;Text Label&lt;/label&gt;
-  &lt;input type=&quot;text&quot; class=&quot;&quot; value=&quot;Text input&quot;/&gt;&lt;/div&gt;</code></pre>
+  &lt;label style=&quot;stencil&quot;&gt;Text Label&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;stencil &quot; value=&quot;Text input&quot;/&gt;&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -643,7 +645,7 @@ both layout convenience and specific styling.</p>
           Default styling
         </div>
         <div class="kss-modifier__example">
-          <div class="wrapper [modifier class]">
+          <section class="wrapper [modifier class]">
   <div class="row [modifier class]">
     <div class="column-3 kss [modifier class]">
        <span class="kss stencil [modifier class]">3</span>
@@ -660,7 +662,7 @@ both layout convenience and specific styling.</p>
      <span class="kss stencil [modifier class]">12</span>
     </div>
   </div>
- </div>
+ </section>
         </div>
         <div class="kss-modifier__name kss-style">
           .wrapper
@@ -669,7 +671,7 @@ both layout convenience and specific styling.</p>
           container class.
         </div>
         <div class="kss-modifier__example">
-          <div class="wrapper wrapper">
+          <section class="wrapper wrapper">
   <div class="row wrapper">
     <div class="column-3 kss wrapper">
        <span class="kss stencil wrapper">3</span>
@@ -686,7 +688,7 @@ both layout convenience and specific styling.</p>
      <span class="kss stencil wrapper">12</span>
     </div>
   </div>
- </div>
+ </section>
         </div>
         <div class="kss-modifier__name kss-style">
           .row
@@ -695,7 +697,7 @@ both layout convenience and specific styling.</p>
           creates a row.
         </div>
         <div class="kss-modifier__example">
-          <div class="wrapper row">
+          <section class="wrapper row">
   <div class="row row">
     <div class="column-3 kss row">
        <span class="kss stencil row">3</span>
@@ -712,12 +714,12 @@ both layout convenience and specific styling.</p>
      <span class="kss stencil row">12</span>
     </div>
   </div>
- </div>
+ </section>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wrapper [modifier class]&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;section class=&quot;wrapper [modifier class]&quot;&gt;
   &lt;div class=&quot;row [modifier class]&quot;&gt;
     &lt;div class=&quot;column-3 kss [modifier class]&quot;&gt;
        &lt;span class=&quot;kss stencil [modifier class]&quot;&gt;3&lt;/span&gt;
@@ -734,7 +736,7 @@ both layout convenience and specific styling.</p>
      &lt;span class=&quot;kss stencil [modifier class]&quot;&gt;12&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
- &lt;/div&gt;</code></pre>
+ &lt;/section&gt;</code></pre>
       </div>
 
       </section>
