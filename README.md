@@ -17,7 +17,7 @@
 
 ### Automation
 - Grunt options and tasks organized using load-grunt-config and jit-grunt
-- CSS Documentation generation: Guide to install [nodeJS version](https://github.com/kss-node/kss-node/wiki/Quick-Start-Guide)) 
+- CSS Documentation generation: (Guide to install [nodeJS version](https://github.com/kss-node/kss-node/wiki/Quick-Start-Guide))
   automated with [grunt-kss](https://github.com/kss-node/grunt-kss) 
 - jsdoc documentation automation with [grunt-jsdoc](https://github.com/krampstudio/grunt-jsdoc)
 - apidocjs documentation automation with [grunt-apidoc](https://github.com/apidoc/grunt-apidoc)
