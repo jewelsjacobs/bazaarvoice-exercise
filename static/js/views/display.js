@@ -4,8 +4,8 @@ var $ = require('jquery'),
   _ = require('lodash');
 
 module.exports = {
-  init: (function () {
-    $( "#display section:first-child" ).on( "updateDisplay", function( event ) {
+  init : (function () {
+    $( '#display section:first-child' ).on( 'updateDisplay', function( event ) {
       $(this).find('.stencil').each(function(i) {
         if (localStorage.getItem('guess')[i] !== '.') {
           $(this).text(localStorage.getItem('guess')[i]);
@@ -14,8 +14,8 @@ module.exports = {
     });
   }()),
 
-  createDisplay: function (guess) {
-    var display = $("#display section:first-child");
+  createDisplay : function (guess) {
+    var display = $('#display section:first-child');
     display.empty();
     if (!!guess) {
       var columns = Math.round(12 / guess.length);

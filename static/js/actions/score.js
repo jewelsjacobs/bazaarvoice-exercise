@@ -3,7 +3,7 @@
 var _ = require('lodash');
 
 module.exports = {
-  calcHits: function (letter) {
+  calcHits : function (letter) {
 
   }
 };

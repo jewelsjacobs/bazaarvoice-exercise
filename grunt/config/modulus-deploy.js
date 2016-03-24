@@ -1,7 +1,7 @@
 module.exports = {
   stage: {
     options: {
-      project: "BazaarVoice Exercise"
+      project: "bazaarvoice-exercise"
     }
   }
 };

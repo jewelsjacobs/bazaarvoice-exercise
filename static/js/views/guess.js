@@ -6,15 +6,15 @@ var $ = require('jquery'),
   _ = require('lodash');
 
 module.exports = {
-  init: (function () {
+  init : (function () {
     $('#enterLetter').on('click', function(event) {
       var message = Service.submitGuess($('#letter').val());
-      $("#message").text(message);
+      $('#message').text(message);
       var guesses = localStorage.getItem('guesses');
-      guesses += " " + $('#letter').val();
+      guesses += ' ' + $('#letter').val();
       localStorage.setItem('guesses', guesses);
-      $("#display section:first-child").trigger("updateDisplay");
-      $("#score").trigger( "updateScores");
+      $('#display section:first-child').trigger('updateDisplay');
+      $('#score').trigger( 'updateScores');
       Play.end();
     });
   }())

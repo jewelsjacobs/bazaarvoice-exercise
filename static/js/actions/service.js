@@ -6,14 +6,14 @@ var $ = require('jquery'),
   _ = require('lodash');
 
 module.exports = {
-  getWord: (function () {
+  getWord : (function () {
     localStorage.clear();
-    $.getJSON("word", function (data) {
+    $.getJSON('word', function (data) {
       localStorage.setItem('word', data.word);
       var word = localStorage.getItem('word');
-      var guess = "";
+      var guess = '';
       _.forEach(word, function (char) {
-        guess += ".";
+        guess += '.';
       });
       localStorage.setItem('misses', 0);
       localStorage.setItem('hits', 0);
@@ -23,7 +23,7 @@ module.exports = {
     });
   }()),
 
-  submitGuess: function (letter) {
+  submitGuess : function (letter) {
     if (!!letter) {
       var routeGuess = guess.routeGuessResult(letter);
 
@@ -32,10 +32,10 @@ module.exports = {
       }
 
       switch (routeGuess[0].result) {
-        case "alreadyGuessed":
-        case "invalid":
+        case 'alreadyGuessed':
+        case 'invalid':
           return routeGuess[0].message;
-        case "notInWord":
+        case 'notInWord':
           var counter = localStorage.getItem('misses');
           counter = parseInt(counter);
           counter++;

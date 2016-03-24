@@ -8,8 +8,8 @@ module.exports = (function () {
     Play = require('./actions/play'),
     Score = require('./views/score');
 
-    Play.start;
-    Guess.init;
-    Display.init;
-    Score.init;
+  Play.start;
+  Guess.init;
+  Display.init;
+  Score.init;
 }());

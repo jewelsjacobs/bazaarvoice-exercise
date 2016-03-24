@@ -5,16 +5,16 @@ var $ = require('jquery'),
   _ = require('lodash');
 
 module.exports = {
-  start: (function () {
+  start : (function () {
     Service.getWord;
   }()),
 
-  end: function () {
+  end : function () {
     if (localStorage.getItem('misses') >= 7) {
-      $("#message").text("You have guessed incorrectly 7 times. Game over");
+      $('#message').text('You have guessed incorrectly 7 times. Game over');
     }
     if (localStorage.getItem('hits') >= localStorage.getItem('word').length) {
-      $("#message").text("You have won!");
+      $('#message').text('You have won!');
     }
   }
 };

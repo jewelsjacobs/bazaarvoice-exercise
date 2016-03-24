@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @desc array of words
  * @const

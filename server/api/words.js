@@ -1,5 +1,3 @@
-'use strict';
-
 var data = require('../data');
 var random = require('node-random');
 /**

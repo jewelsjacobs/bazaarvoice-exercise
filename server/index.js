@@ -15,7 +15,7 @@ var routes = require('./routes');
  */
 app.use(methodOverride('_method'));
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended : true }));
 app.use(logger('dev'));
 app.use('/static', express.static('.build'));
 
